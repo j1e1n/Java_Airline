@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 
 public class Flight {
@@ -56,16 +55,22 @@ public class Flight {
 
     public boolean getSeatAvailability() {
         int planeCapacity = plane.getPlaneType().getCapacity();
-        if(getNumberOfAvailableSeats() <= planeCapacity){
+        if(getNumberOfAvailableSeats() <= planeCapacity && getNumberOfAvailableSeats() > 0){
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
     public void addPassengerToList(Passenger passenger) {
         passengerList.add(passenger);
     }
+
+    public void bookPassenger(Passenger passenger) {
+        if (getSeatAvailability()) {
+            addPassengerToList(passenger);
+        }
+    }
+
 }
 
 
