@@ -50,5 +50,10 @@ public class FlightTest {
         assertEquals(0, flight.passengerCount());
     }
 
+    @Test
+    public void canGetNumberOfAvailableSeats(){
+        assertEquals(450, flight.getAvailableSeats());
+    }
+
 
 }
