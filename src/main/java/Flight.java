@@ -23,6 +23,10 @@ public class Flight {
         return this.passengerList.size();
     }
 
+    public ArrayList<Passenger> getPassengerList() {
+        return passengerList;
+    }
+
     public Plane getPlane() {
         return plane;
     }

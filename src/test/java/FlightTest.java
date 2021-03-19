@@ -2,6 +2,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class FlightTest {
 
@@ -37,6 +38,16 @@ public class FlightTest {
     @Test
     public void flightHasDepartureTime(){
         assertEquals("06:00", flight.getDepartureTime());
+    }
+
+    @Test
+    public void flightHasPassengerList(){
+        assertNotNull(flight.getPassengerList());
+    }
+
+    @Test
+    public void passengerListStartsEmpty(){
+        assertEquals(0, flight.passengerCount());
     }
 
 
