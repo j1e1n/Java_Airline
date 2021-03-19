@@ -8,11 +8,13 @@ public class FlightTest {
 
     Flight flight;
     Plane plane;
+    Passenger passenger;
 
     @Before
     public void before(){
         plane = new Plane(PlaneType.JUMBO800);
         flight = new Flight(plane, "JA1234", "SVO", "GLA", "06:00");
+        passenger = new Passenger("John Smith", 2);
     }
 
     @Test
@@ -58,6 +60,12 @@ public class FlightTest {
     @Test
     public void canCheckIfSeatsAreAvailableTrue(){
         assertEquals(true, flight.getSeatAvailability());
+    }
+
+    @Test
+    public void canAddPassengerToList(){
+        flight.addPassengerToList(passenger);
+        assertEquals(1, flight.passengerCount());
     }
 
 }

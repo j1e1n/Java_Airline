@@ -62,6 +62,10 @@ public class Flight {
             return false;
         }
     }
+
+    public void addPassengerToList(Passenger passenger) {
+        passengerList.add(passenger);
+    }
 }
 
 
